@@ -26,14 +26,31 @@ a{
         display:flex;
         flex-flow: column nowrap;
     }
-        .menu{
-            background: rgba(0, 0, 0, .1);
-            display:flex;
-            flex-flow: row nowrap;
-            height: 60px;
-            align-items: center;
-            /* Colocar un borde abajo del contenedor (tamano, contextura, color) */
-            border-bottom: 1px solid rgba(255, 255, 255, .5);
+        .menu {
+            display: flex;
+            flex-flow: row wrap;      /* permite que los elementos bajen de línea si no caben */
+            justify-content: center;  /* centra horizontalmente */
+            background: rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 0 20px;
+        }
+
+        .menu a {
+            display: flex;           /* icono + texto en fila */
+            align-items: center;     /* verticalmente centrado */
+            gap: 8px;                /* separación */
+            color: #FFFBE6;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;       /* reduce un poco el padding para que no se salga */
+            flex-shrink: 1;          /* permite que el enlace se encoja si falta espacio */
+        }
+
+        .menu a img {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
         }
             .logo{
                 flex: 1 1 auto;
@@ -45,22 +62,28 @@ a{
                 }    
             
             .nav{
-                flex: 3 1 auto;    
-                display: flex;
-                justify-content: space-around;
-                
+                justify-content: center;
+                flex-wrap: wrap;
+                text-transform: uppercase;
             } 
                 .nav a{
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
                     color: #FFFBE6;
+                    text-decoration: none;
                     font-size: 16px;
-                    /* Transformar a mayusculas, minusculas, capitalize, etc... */
-                    text-transform: uppercase;
-                    padding: 0 10px;
-                    /* Espaciamiento entre cada letra de las palabras */
-                    letter-spacing: 2px;
+                    padding: 5px 10px;
+                    flex-shrink: 1;
                 }
                 .nav a:hover {
                     color:#B7B7B7;  
+                }
+                .nav a img {
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    vertical-align: middle;
                 }
 
             .socialmedia{
@@ -85,6 +108,8 @@ a{
             h1{
                 background: #660B05;
                 color: #FFFBE6;
+                text-align: center;
+                font-size: 16px;
             }
 
     .section{
@@ -95,14 +120,19 @@ a{
         .articulos{
             background: #3E0703;
             flex: 3 1 auto;
-            display: flex;
-            flex-flow: row wrap;
+            /* display: flex;
+            flex-flow: row wrap; */
         }
             .article{
                 color: #FFFBE6;
                 background: #660B05;
-                flex: 1 1 40%;
+                flex: 1 1 100%;
             }
+                .article img {
+                    flex: 1 1 100%;
+                    max-width: 100%;
+                    height: auto;
+                }
             .navegacion{
                 
                 background: #000;
@@ -119,11 +149,16 @@ a{
         
         .aside{
             background: #800000;
-            flex: 1 1 auto;
+            flex: 3 1 auto;
         }
             .publicidad{
                 background: #C96868;
+                flex: 1 1 100%;
             }
+                .publicidad img {
+                    max-width: 100%;
+                    height: auto;
+                }
 
     .footer{
         background: #000;
@@ -157,10 +192,23 @@ a{
             
         }
 
-    .menu{
-        flex-direction: column;
-        height: auto;
+    .menu {
+        flex-flow: column nowrap;   /* menú vertical en móviles */
+        align-items: flex-start;
+        padding: 10px 20px;
     }
+
+    .menu a {
+        font-size: 14px;
+        padding: 10px 0;
+        gap: 6px;
+    }
+    .menu a img {
+    width: 20px;               /* tamaño del ícono */
+    height: 20px;
+    display: inline-block;    
+    vertical-align: middle;        /* evita que se comporte como inline */
+}
 }
 
 @media all  and (max-width: 600px) {
