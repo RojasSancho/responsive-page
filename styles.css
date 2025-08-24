@@ -1,0 +1,154 @@
+/* Se usa un asterisco para darle formato general al website */
+*{
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main{
+    display:flex;
+    /* Engloba flex-direction y flex-wrap en una sola */
+    flex-flow: column nowrap;
+}
+    .header{
+        background: url(images/batman.jpg);
+        background-position: center;
+        background-attachment: contain;
+        background-size: cover;
+        display:flex;
+        flex-flow: column nowrap;
+    }
+        .menu{
+            background: rgba(0, 0, 0, .1);
+            display:flex;
+            flex-flow: row nowrap;
+            height: 60px;
+            align-items: center;
+            /* Colocar un borde abajo del contenedor (tamano, contextura, color) */
+            border-bottom: 1px solid rgba(255, 255, 255, .5);
+        }
+            .logo{
+                flex: 1 1 auto;
+                display: flex;
+                justify-content: center;
+            }  
+                .logo a{
+                    color: #FFFBE6;
+                }    
+            
+            .nav{
+                flex: 3 1 auto;    
+                display: flex;
+                justify-content: space-around;
+                
+            } 
+                .nav a{
+                    color: #FFFBE6;
+                    font-size: 11px;
+                    /* Transformar a mayusculas, minusculas, capitalize, etc... */
+                    text-transform: uppercase;
+                    padding: 0 10px;
+                    /* Espaciamiento entre cada letra de las palabras */
+                    letter-spacing: 2px;
+                }
+                .nav a:hover {
+                    color:#B7B7B7;  
+                }
+
+            .socialmedia{
+                flex: 1 1 auto;
+                display: flex;
+                justify-content: center;
+        
+            }  
+                .socialmedia a{
+                    font-size: 18px;
+                    color: #FFFBE6;
+                    padding: 0 5px;
+                }
+
+                .socialmedia a:hover {
+                    color:#B7B7B7;  
+                }
+        
+        .texto-principal{
+            background: #A594F9;
+        }    
+            h1{
+                background: #CDC1FF;
+            }
+
+    .section{
+        background: #000;
+        display:flex;
+        flex-flow: row nowrap;
+    }
+        .articulos{
+            background: #347928;
+            flex: 3 1 auto;
+            display: flex;
+            flex-flow: row wrap;
+        }
+            .article{
+                background: #C0EBA6;
+                flex: 1 1 40%;
+            }
+            .navegacion{
+                background: #FFFBE6;
+                flex: 1 1 100%;
+            }
+        
+        .aside{
+            background: #800000;
+            flex: 1 1 auto;
+        }
+            .publicidad{
+                background: #C96868;
+            }
+
+    .footer{
+        background: #000;
+        display: flex;
+        justify-content: center;
+    }
+        .pie{
+            background: #FFDE4D;
+            width: 300px;
+        }
+
+@media all  and (max-width: 800px) {
+    .section{
+        flex-direction: column;
+    }
+        .aside{
+            display:flex;
+            justify-content: center;
+            
+        }
+
+    .menu{
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+@media all  and (max-width: 600px) {
+    .articulos{
+        flex-direction: column;
+    }
+}
+
+@media all  and (max-width: 400px) {
+    .aside{
+        flex-direction: column;
+    }
+        
+}
