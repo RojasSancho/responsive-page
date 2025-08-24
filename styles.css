@@ -56,10 +56,17 @@ a{
                 flex: 1 1 auto;
                 display: flex;
                 justify-content: center;
+                align-items: center;
+                background: rgba(255, 0, 0, 0.2);
             }  
                 .logo a{
                     color: #FFFBE6;
-                }    
+                }  
+                .logo img {
+                    width: 100px;    /* o el tamaño que quieras */
+                    height: auto;
+                    display: block;
+                }  
             
             .nav{
                 justify-content: center;
