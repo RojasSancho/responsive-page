@@ -52,7 +52,7 @@ a{
             } 
                 .nav a{
                     color: #FFFBE6;
-                    font-size: 11px;
+                    font-size: 16px;
                     /* Transformar a mayusculas, minusculas, capitalize, etc... */
                     text-transform: uppercase;
                     padding: 0 10px;
@@ -70,7 +70,7 @@ a{
         
             }  
                 .socialmedia a{
-                    font-size: 18px;
+                    font-size: 26px;
                     color: #FFFBE6;
                     padding: 0 5px;
                 }
@@ -80,10 +80,11 @@ a{
                 }
         
         .texto-principal{
-            background: #A594F9;
+            background: #3E0703;
         }    
             h1{
-                background: #CDC1FF;
+                background: #660B05;
+                color: #FFFBE6;
             }
 
     .section{
@@ -92,19 +93,29 @@ a{
         flex-flow: row nowrap;
     }
         .articulos{
-            background: #347928;
+            background: #3E0703;
             flex: 3 1 auto;
             display: flex;
             flex-flow: row wrap;
         }
             .article{
-                background: #C0EBA6;
+                color: #FFFBE6;
+                background: #660B05;
                 flex: 1 1 40%;
             }
             .navegacion{
-                background: #FFFBE6;
+                
+                background: #000;
                 flex: 1 1 100%;
             }
+                .navegacion a:visited{
+                    color: #FFFBE6;
+                }
+
+                .navegacion a:hover {
+                    color: #B7B7B7;
+                }
+
         
         .aside{
             background: #800000;
@@ -118,11 +129,23 @@ a{
         background: #000;
         display: flex;
         justify-content: center;
+        height: 80px; /* Ajusta este valor según lo necesites */
+        align-items: center; /* Centra verticalmente el contenido */
     }
         .pie{
-            background: #FFDE4D;
-            width: 300px;
+            color: #000;
+            background: #FFFBE6;
+            padding: 10px 20px;
+            /* Espacio interno */
+            flex: 0 0 auto;
         }
+            .pie a:visited {
+                color: #000;
+            }
+
+            .pie a:hover {
+                    color: #B7B7B7;
+                }
 
 @media all  and (max-width: 800px) {
     .section{
